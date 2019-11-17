@@ -1,3 +1,6 @@
+import numpy
+
+
 def BubleSort(V):
     counter = 0
     for i in range(V.__len__()):
@@ -34,21 +37,6 @@ def insertion_sort2(V):
         while j > 0 and V[j] < V[j - 1]:
             V[j], V[j - 1] = V[j - 1], V[j]
             j -= 1
-
-
-def SelectSort(arr):
-    counter = 0
-    i = len(arr)
-    while i > 1:
-        max = 0
-        for j in range(i):
-            counter += 1
-            if arr[j] > arr[max]:
-                max = j
-        arr[i - 1], arr[max] = arr[max], arr[i - 1]
-        i -= 1
-    print("counter=", counter)
-
 
 
 def ShellSort(a):
