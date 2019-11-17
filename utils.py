@@ -1,6 +1,3 @@
-import numpy
-
-
 def checker(V):
     for i in range(1, len(V)):
         if V[i - 1] > V[i]:
@@ -10,6 +7,6 @@ def checker(V):
 
 def checker_r(V, ascending=False):
     for i in range(1, len(V)):
-        if ascending ^ (V[i-1] > V[i]):
+        if ascending ^ (V[i - 1] > V[i]):
             print("сортировка говно")
             return
