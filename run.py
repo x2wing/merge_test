@@ -26,3 +26,10 @@ def InsertionSort(V):
             j -= 1
 
     print("counter=", counter)
+
+def insertion_sort2(V):
+    for i in range(1, V.__len__()):
+        j = i
+        while j > 0 and V[j] < V[j - 1]:
+            V[j], V[j - 1] = V[j - 1], V[j]
+            j -= 1
