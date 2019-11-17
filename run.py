@@ -27,9 +27,49 @@ def InsertionSort(V):
 
     print("counter=", counter)
 
+
 def insertion_sort2(V):
     for i in range(1, V.__len__()):
         j = i
         while j > 0 and V[j] < V[j - 1]:
             V[j], V[j - 1] = V[j - 1], V[j]
             j -= 1
+
+
+def SelectSort(arr):
+    counter = 0
+    i = len(arr)
+    while i > 1:
+        max = 0
+        for j in range(i):
+            counter += 1
+            if arr[j] > arr[max]:
+                max = j
+        arr[i - 1], arr[max] = arr[max], arr[i - 1]
+        i -= 1
+    print("counter=", counter)
+
+
+
+def ShellSort(a):
+    counter = 0
+
+    def new_increment(a):
+        i = int(len(a) / 2)
+        yield i
+        while i != 1:
+
+            if i == 2:
+                i = 1
+            else:
+                i = int(numpy.round(i / 2.2))
+            yield i
+
+    for increment in new_increment(a):
+        for i in range(increment, len(a)):
+            for j in range(i, increment - 1, -increment):
+                counter += 1
+                if a[j - increment] < a[j]:
+                    break
+                a[j], a[j - increment] = a[j - increment], a[j]
+    print("counter=", counter)
