@@ -27,9 +27,24 @@ def InsertionSort(V):
 
     print("counter=", counter)
 
+
 def insertion_sort2(V):
     for i in range(1, V.__len__()):
         j = i
         while j > 0 and V[j] < V[j - 1]:
             V[j], V[j - 1] = V[j - 1], V[j]
             j -= 1
+
+
+def SelectSort(arr):
+    counter = 0
+    i = len(arr)
+    while i > 1:
+        max = 0
+        for j in range(i):
+            counter += 1
+            if arr[j] > arr[max]:
+                max = j
+        arr[i - 1], arr[max] = arr[max], arr[i - 1]
+        i -= 1
+    print("counter=", counter)
