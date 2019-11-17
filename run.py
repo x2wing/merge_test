@@ -13,3 +13,16 @@ def BubleSort(V):
             print("counter=", counter)
             return
     print("counter=", counter)
+
+
+def InsertionSort(V):
+    counter = 0
+    for i in range(1, V.__len__()):
+        j = i
+
+        while j > 0 and V[j] < V[j - 1]:
+            counter += 1
+            V[j - 1], V[j] = V[j], V[j - 1]
+            j -= 1
+
+    print("counter=", counter)
